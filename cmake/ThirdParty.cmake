@@ -25,11 +25,15 @@ list(REMOVE_ITEM all_boost "boost_python")
 list(REMOVE_ITEM all_boost_interface "boost_accumulators")
 list(REMOVE_ITEM all_boost_interface "boost_python")
 list(REMOVE_ITEM all_boost_interface "boost_parameter_python")
-list(REMOVE_ITEM all_boost_interface "boost_parameter_python")
+list(REMOVE_ITEM all_boost "boost_parameter_python")
 list(REMOVE_ITEM all_boost_interface "boost_property_map_parallel")
-list(REMOVE_ITEM all_boost_interface "boost_property_map_parallel")
+list(REMOVE_ITEM all_boost "boost_property_map_parallel")
 list(REMOVE_ITEM all_boost_interface "boost_numpy")
-list(REMOVE_ITEM all_boost_interface "boost_numpy")
+list(REMOVE_ITEM all_boost "boost_numpy")
+list(REMOVE_ITEM all_boost "boost_locale_test")
+list(REMOVE_ITEM all_boost "boost_url_limits")
+list(REMOVE_ITEM all_boost_interface "boost_locale_test")
+list(REMOVE_ITEM all_boost_interface "boost_url_limits")
 
 # add Boost::Boost
 add_library(boost INTERFACE)
@@ -46,6 +50,7 @@ target_link_libraries(boost_headers INTERFACE ${all_boost_interface})
 ###########################################################################
 FetchContent_Declare(CGAL
   URL https://github.com/CGAL/cgal/releases/download/v5.5.1/CGAL-5.5.1-library.zip 
+  URL_HASH SHA256=48faf564bc703b24d10bbc6140ed75cf0c157370617ec9f0f94a6becc3b70342
   DOWNLOAD_EXTRACT_TIMESTAMP  ON
   OVERRIDE_FIND_PACKAGE
 )
