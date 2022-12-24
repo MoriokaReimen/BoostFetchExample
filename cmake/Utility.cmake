@@ -1,5 +1,19 @@
+# ███╗░░░███╗░█████╗░██████╗░██╗░█████╗░██╗░░██╗░█████╗░
+# ████╗░████║██╔══██╗██╔══██╗██║██╔══██╗██║░██╔╝██╔══██╗
+# ██╔████╔██║██║░░██║██████╔╝██║██║░░██║█████═╝░███████║
+# ██║╚██╔╝██║██║░░██║██╔══██╗██║██║░░██║██╔═██╗░██╔══██║
+# ██║░╚═╝░██║╚█████╔╝██║░░██║██║╚█████╔╝██║░╚██╗██║░░██║
+# ╚═╝░░░░░╚═╝░╚════╝░╚═╝░░╚═╝╚═╝░╚════╝░╚═╝░░╚═╝╚═╝░░╚═╝
+# 2033/12/24 Merry Christmass!!
 include_guard(DIRECTORY)
 
+###########################################################################
+# search_target
+# search all build target under the specified directory
+# !!remarks!! alias and interfaces are not included
+# param: target_dir    top directory to search
+# param: out           found target name in list
+###########################################################################
 function(search_target target_dir out)
     set(targets)
     get_all_targets_recursive(targets ${target_dir})
@@ -16,6 +30,12 @@ macro(get_all_targets_recursive targets dir)
     list(APPEND ${targets} ${current_targets})
 endmacro()
 
+###########################################################################
+# search_interface
+# search all interface under the specified directory
+# param: target_dir    top directory to search
+# param: out           found interface name in list
+###########################################################################
 function(search_interface target_dir out)
   # find CMakeLists.txt under directory
   file(GLOB_RECURSE files CONFIGURE_DEPENDS
